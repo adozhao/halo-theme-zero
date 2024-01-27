@@ -5,7 +5,7 @@
 ![](https://github.com/adozhao/halo-theme-zero/blob/main/screenshot.png)  
 
 ### 2.特性  
-- 响应式设计，多端适配
+- 响应式设计
 - 支持切换夜间模式
 - 适配`链接管理`插件
 ### 3.说明
