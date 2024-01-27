@@ -1,7 +1,7 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
-  name: halo-theme-zero
+  name: ado-zero
 spec:
   displayName: Zero
   author:
