@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:text="${#strings.defaultString(title, site.title)}"></title>
     <link rel="stylesheet" th:href="@{/assets/dist/style.css?v={version}(version=${theme.spec.version})}" />
-    <link rel="stylesheet" th:href="@{/assets/dist/highlight.css?v={version}(version=${theme.spec.version})}" />
     <script th:src="@{/assets/dist/main.iife.js?v={version}(version=${theme.spec.version})}"></script>
   </head>
   <body>
