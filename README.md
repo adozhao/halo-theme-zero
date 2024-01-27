@@ -14,6 +14,7 @@
 - 该主题适用于Halo >=2.0.0 
 
 ### 4.依赖插件
+为了获得更好的体验，您可安装如下插件（如果需要）：
 - [搜索组件](https://github.com/halo-dev/plugin-search-widget)   
 
 - [链接管理](https://github.com/halo-sigs/plugin-links)  
