@@ -1,4 +1,6 @@
-### 1.回归Blog本质，简单、放松、专注
+### 1.回归Blog本质，简单、放松、专注  
+[主题预览](https://ado.zone)  
+
 ![](https://github.com/adozhao/halo-theme-zero/blob/main/screenshot.png)  
 
 ### 2.说明
