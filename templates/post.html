@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{modules/layout :: html(title=${post.spec.title}, content = ~{::content})}">  
+    <th:block th:fragment="content">
+        <div id="content">
+          <article class="article article-type-post" itemprop="blogPost" itemscope="">
+            <div class="article-inner">
+              <header class="article-header">
+                <h2 class="article-title" itemprop="name">
+                  <a th:href="@{${post.status?.permalink}}" th:text="${post.spec.title}"></a>
+                </h2>
+                <div class="article-meta">
+                  <time class="article-date" 
+                    itemprop="datePublished"
+                    th:datetime="${#temporals.format(post.spec.publishTime, 'MMMM dd yyyy')}"
+                    th:text="${#temporals.format(post.spec.publishTime, 'MMMM dd yyyy')}"
+                    ></time>
+                </div>
+              </header>
+              <div class="article-entry" itemprop="articleBody">
+                <article th:utext="${post.content.content}"></article>
+              </div>
+            </div>
+          </article>
+          <nav id="article-nav" class="article-nav" th:with="postCursor = ${postFinder.cursor(post.metadata.name)}">
+              <a th:if="${postCursor.hasNext()}" th:href="@{${postCursor.next.status.permalink}}" th:title="${postCursor.next.spec.title}" id="article-nav-newer" class="article-nav-link-wrap newer">
+                <strong class="article-nav-caption">下一篇</strong>
+                <div class="article-nav-title" th:text="${#strings.abbreviate(postCursor.next.spec.title,20)}"></div>
+              </a>
+              <a th:if="${postCursor.hasPrevious()}" th:href="@{${postCursor.previous.status.permalink}}" th:title="${postCursor.previous.spec.title}" id="article-nav-older" class="article-nav-link-wrap older">
+                <strong class="article-nav-caption">上一篇</strong>
+                <div class="article-nav-title" th:text="${#strings.abbreviate(postCursor.previous.spec.title,20)}"></div>
+              </a>
+          </nav>
+          <halo:comment
+            group="content.halo.run"
+            kind="Post"
+            th:attr="name=${post.metadata.name}"
+            colorScheme="window.main.currentColorScheme"
+          />
+        </div>
+    </th:block>
+</html>

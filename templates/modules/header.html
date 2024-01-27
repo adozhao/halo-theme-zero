@@ -1,0 +1,16 @@
+<header id="header">
+    <h1 id="title">
+        <a href="/" th:text="${site?.title}"></a>
+    </h1>
+    <nav>
+        <th:block th:each="menuItem : ${menuFinder.getPrimary().menuItems}">
+        <a class="nav-link" th:href="@{${menuItem.status?.href}}" th:target="${menuItem.spec.target?.value}"
+            th:aria-label="'Menu named ' + ${menuItem.status?.displayName}"
+            th:text="${menuItem.status?.displayName}"></a>
+        <span class="nav-spacer">×</span>
+        </th:block>
+        <th:block th:if="${pluginFinder.available('PluginSearchWidget')}">
+        <a class="nav-link" href="javascript:SearchWidget.open();" aria-label="Search in site">搜索</a>
+        </th:block>
+    </nav>
+</header>

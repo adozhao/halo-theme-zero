@@ -1,0 +1,11 @@
+<footer id="footer">
+    <div class="top-box">
+        <halo:footer />
+    </div>
+    <div class="bottom-box">
+        ©
+        <th:block th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy')}" />
+        <span th:text="${site.title}"></span> All Rights Reserved.
+        Theme is <a href="https://ado.zone" target="_blank">Zero.</a>
+    </div>
+</footer>
