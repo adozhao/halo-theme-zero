@@ -1,6 +1,6 @@
-### 1.预览  
+### 1.主题预览  
 
-回归Blog本质，简单、放松、专注 [主题预览](https://ado.zone)  
+[点此进入](https://ado.zone)  
 
 ![](https://github.com/adozhao/halo-theme-zero/blob/main/screenshot.png)  
 
