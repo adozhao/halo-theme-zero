@@ -1,19 +1,27 @@
 ### 1.主题预览  
 
-[点此进入](https://ado.zone)  
+演示站点：[ADO·ZONE](https://ado.zone)
 
 ![](https://github.com/adozhao/halo-theme-zero/blob/main/screenshot.png)  
 
+### 特性  
+- 响应式设计，多端适配
+- 支持切换夜间模式
+- 适配`链接管理`插件
 ### 2.说明
-- 该主题的原作者为 `cjquines`，非常感谢做出这么优秀的主题，原主题地址：[hexo-theme-ascent](https://github.com/cjquines/hexo-theme-ascent)
+- 该主题的原作者为 `cjquines`，原主题地址：[hexo-theme-ascent](https://github.com/cjquines/hexo-theme-ascent)，非常感谢做出这么优秀的主题! 
 
-- 全局搜索功能需要先安装插件: [plugin-search-widget](https://github.com/halo-dev/plugin-search-widget)  
+- 该主题适用于Halo >=2.0.0 
 
-- 该主题适用于Halo >2.0, 版本去掉了代码高亮和内容页图片点击放大预览功能，
-  可以通过安装以下两个插件来实现：  
+### 3.依赖插件
+- [搜索组件](https://github.com/halo-dev/plugin-search-widget)   
 
-  [plugin-highlightjs](https://github.com/halo-sigs/plugin-highlightjs)  
+- [链接管理](https://github.com/halo-sigs/plugin-links)  
 
-  [plugin-lightgallery](https://github.com/halo-sigs/plugin-lightgallery)
+- [评论组件](https://github.com/halo-dev/plugin-comment-widget)  
+
+- [highlight.js 代码高亮](https://github.com/halo-sigs/plugin-highlightjs)  
+
+- [lightgallery.js 灯箱](https://github.com/halo-sigs/plugin-lightgallery)  
 
 
