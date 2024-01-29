@@ -1,0 +1,20 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: halo-theme-zero-setting
+spec:
+  forms:
+    - group: style
+      label: 样式
+      formSchema:
+        - $formkit: radio
+          name: color_scheme
+          label: 默认配色
+          value: system
+          options:
+            - label: 跟随系统
+              value: system
+            - label: 深色
+              value: dark
+            - label: 浅色
+              value: light
