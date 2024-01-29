@@ -31,12 +31,14 @@
                 <div class="article-nav-title" th:text="${#strings.abbreviate(postCursor.previous.spec.title,20)}"></div>
               </a>
           </nav>
-          <halo:comment
-            group="content.halo.run"
-            kind="Post"
-            th:attr="name=${post.metadata.name}"
-            colorScheme="window.main.currentColorScheme"
-          />
+          <div id="comment" th:if="${haloCommentEnabled}">
+            <halo:comment
+              group="content.halo.run"
+              kind="Post"
+              th:attr="name=${post.metadata.name}"
+              colorScheme="window.main.currentColorScheme"
+            />
+          </div>
         </div>
     </th:block>
 </html>
