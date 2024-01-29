@@ -272,6 +272,10 @@ blockquote {
   border-left: 1px solid var(--tertiary-color);
 }
 
+.article em{
+  word-break: break-word;
+}
+
 .article .article-entry blockquote footer, .caption {
   color: var(--secondary-color);
   display: block;
