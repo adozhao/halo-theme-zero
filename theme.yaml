@@ -1,11 +1,11 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
-  name: halo-theme-zero
+  name: ado-zero
 spec:
   displayName: Zero
   author:
-    name: ado
+    name: ADO
     website: https://ado.zone
   description: 回归Blog本质，简单、放松、专注
   logo: /themes/ado-zero/assets/logo.png
@@ -13,5 +13,5 @@ spec:
   repo: https://github.com/adozhao/halo-theme-zero.git
   settingName: "halo-theme-zero-setting"
   configMapName: "halo-theme-zero-configMap"
-  version: 1.0.0
+  version: 1.0.1
   require: ">=2.0.0"
