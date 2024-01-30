@@ -338,14 +338,14 @@ blockquote {
   transition-property: border-bottom;
 }
 
-#title a, .article-title a, a.nav-link, .archive-article-title a, .article-nav a, a.page-number, a.extend, .month, .article-footer a, .article-category a, .article-tag a, .article-more-link a {
+#title a, .article-title a, a.nav-link, .archive-article-title a, .article-nav a, a.page-number, a.extend, .month, .article-footer a, .article-category a, .article-tag a, .article-more-link a, #footer a {
   -webkit-transition-duration: .3s;
   -webkit-transition-property: background;
   transition-duration: .3s;
   transition-property: background;
 }
  
-#title a:hover, .article-title a:hover, a.nav-link:hover, .archive-article-title a:hover, .article-nav a:hover, a.page-number:hover, a.extend:hover, .month:hover, .article-footer a:hover, .article-category a:hover, .article-tag a:hover, .article-more-link a:hover {
+#title a:hover, .article-title a:hover, a.nav-link:hover, .archive-article-title a:hover, .article-nav a:hover, a.page-number:hover, a.extend:hover, .month:hover, .article-footer a:hover, .article-category a:hover, .article-tag a:hover, .article-more-link a:hover, #footer a:hover {
   -webkit-transition-duration: .3s;
   -webkit-transition-property: background;
   background: var(--link-bg-color) !important;
@@ -443,8 +443,8 @@ td, th, table caption, table td, table th {
     margin-bottom: 10px;
 }
 .links .link-box .avatar-box{
-    width: 80px;
-    height: 80px;
+    width: 4em;
+    height: 4em;
 }
 .links .link-box .avatar-box img{
     width: 100%;
@@ -456,6 +456,7 @@ td, th, table caption, table td, table th {
     flex-direction: column;
     margin-left: 20px;
     justify-content: space-evenly;
+    font-size: 0.9em;
 }
 .links .link-box .right-box .name{
     font-weight: bold;
@@ -472,6 +473,6 @@ td, th, table caption, table td, table th {
   text-align: center;
   color: var(--secondary-color);
   margin-top: 50px;
-  font-size: 16px;
+  font-size: 0.8em;
   line-height: 1.5;
 }
