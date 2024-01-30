@@ -1,0 +1,17 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: halo-theme-zero-setting
+spec:
+  forms:
+    - group: beian
+      label: 备案设置
+      formSchema:
+        - $formkit: text
+          name: icp_text
+          label: ICP备案号
+          placeholder: "请输入ICP备案号"
+        - $formkit: text
+          name: icp_link
+          label: ICP备案跳转链接
+          value: https://beian.miit.gov.cn/

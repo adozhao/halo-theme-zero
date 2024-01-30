@@ -3,6 +3,9 @@
         <halo:footer />
     </div>
     <div class="bottom-box">
+        <div th:if="${not #strings.isEmpty(theme.config.beian.icp_text)}">
+            <a href="https://beian.miit.gov.cn/" th:href="${theme.config.beian.icp_link}" th:text="${theme.config.beian.icp_text}" rel="external nofollow" target="_blank"></a>
+        </div>
         ©
         <th:block th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy')}" />
         <a href="/" th:text="${site.title}"></a> All Rights Reserved.
