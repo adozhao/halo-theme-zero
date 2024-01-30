@@ -1,7 +1,7 @@
 @import url('//fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@400;900&display=swap');
  
 /* general */
-:root {
+html {
   --bg-color: #fafafa;
   --code-bg-color: #f4f4f4;
   --text-color: #212121;
@@ -14,6 +14,22 @@
   --body-stack: "Lora", "Georgia", "Times New Roman", serif;
   --secondary-stack: "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif;
   --title-stack: "Playfair Display SC", "Georgia", serif;
+}
+
+html.dark{
+  --bg-color: #212121;
+  --code-bg-color: #292929;
+  --text-color: #fff;
+  --secondary-color: #c0c0c0;
+  --tertiary-color: #6e6e6e;
+  --link-color: #4d6b75;
+  --link-hover-color: #96b1bb;
+  --link-bg-color: #5d828e;
+  --selection-color: #acc1c9;
+}
+
+html.sans{
+  --body-stack: "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif;
 }
 
 html {
@@ -426,6 +442,7 @@ td, th, table caption, table td, table th {
   bottom: 0;
   position: fixed;
   right: 0;
+  user-select: none;
 }
 
 #sans-font, #dark-mode {

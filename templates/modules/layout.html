@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" th:fragment="html (content)">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title th:text="${#strings.defaultString(title, site.title)}"></title>
-    <link rel="stylesheet" th:href="@{/assets/dist/style.css?v={version}(version=${theme.spec.version})}" />
-    <script th:src="@{/assets/dist/main.iife.js?v={version}(version=${theme.spec.version})}"></script>
-  </head>
-  <body>
-    <div id="wrapper">
-      <div th:replace="~{modules/header :: header}"></div>
-      <th:block th:replace="${content}" />
-      <div th:replace="~{modules/footer :: footer}"></div>
-      <div id="settings-container">
-        <div id="dark-mode">dark</div>
-        <div id="sans-font">sans</div>
-      </div>
-      <script type="text/javascript">
-        let d=document,r=d.documentElement.style,f=r.setProperty.bind(r),l=localStorage,s=l.getItem('s'),n=l.getItem('n'),m=d.getElementById("dark-mode"),b=()=>{f('--bg-color','#fafafa');f('--code-bg-color','#f4f4f4');f('--text-color','#212121');f('--secondary-color','#808080');f('--tertiary-color','#b0b0b0');f('--link-color','#b5c8cf');f('--link-hover-color','#618794');f('--link-bg-color','#dae4e7');f('--selection-color','#dae4e7');m.innerHTML="dark"},c=()=>{f('--bg-color','#212121');f('--code-bg-color','#292929');f('--text-color','#fff');f('--secondary-color','#c0c0c0');f('--tertiary-color','#6e6e6e');f('--link-color','#4d6b75');f('--link-hover-color','#96b1bb');f('--link-bg-color','#5d828e');f('--selection-color','#acc1c9');m.innerHTML="light"},o=d.getElementById("sans-font"),e=()=>{f('--body-stack','"Lora", "Georgia", "Times New Roman", serif');o.innerHTML="sans"},g=()=>{f('--body-stack','"Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif');o.innerHTML="serif"};m.onclick=()=>{if(s==2){s=1;l.setItem('s',s);c()}else{s=2;l.setItem('s',s);b()}};o.onclick=()=>{if(n==2){n=1;l.setItem('n',n);g()}else{n=2;l.setItem('n',n);e()}};if(!s){s=2;l.setItem('s',2)};if(s==1){c()};if(!n){n=2;l.setItem('n',2)};if(n==1){g()};
-      </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title th:text="${#strings.defaultString(title, site.title)}"></title>
+  <link rel="stylesheet" th:href="@{/assets/dist/style.css?v={version}(version=${theme.spec.version})}" />
+  <script th:src="@{/assets/dist/main.iife.js?v={version}(version=${theme.spec.version})}"></script>
+  <script th:src="@{/assets/dist/script.js?v={version}(version=${theme.spec.version})}"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div th:replace="~{modules/header :: header}"></div>
+    <th:block th:replace="${content}" />
+    <div th:replace="~{modules/footer :: footer}"></div>
+    <div id="settings-container">
+      <div id="dark-mode">dark</div>
+      <div id="sans-font">sans</div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
