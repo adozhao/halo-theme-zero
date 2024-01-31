@@ -1,1 +1,77 @@
-window.onload=(()=>{let t=document,s=localStorage,l=s.getItem("s"),n=s.getItem("n"),d=t.getElementsByTagName("html")[0];m=t.getElementById("dark-mode"),b=(()=>{d.classList.remove("dark"),m.innerHTML="dark"}),c=(()=>{d.classList.add("dark"),m.innerHTML="light"}),o=t.getElementById("sans-font"),e=(()=>{d.classList.remove("sans"),o.innerHTML="sans"}),g=(()=>{d.classList.add("sans"),o.innerHTML="serif"}),m.onclick=(()=>{if(2==l){let e=t.getElementById("comment");if(e){let s=t.getElementById(e.children[0].id).children[0];if(s&&s.shadowRoot){let e=s.shadowRoot.querySelector(".halo-comment-widget");e.classList.remove("light"),e.classList.add("dark")}}l=1,s.setItem("s",l),c()}else{let e=t.getElementById("comment");if(e){let s=t.getElementById(e.children[0].id).children[0];if(s&&s.shadowRoot){let e=s.shadowRoot.querySelector(".halo-comment-widget");e.classList.add("light"),e.classList.remove("dark")}}l=2,s.setItem("s",l),b()}}),o.onclick=(()=>{2==n?(n=1,s.setItem("n",n),g()):(n=2,s.setItem("n",n),e())}),l||(l=2,s.setItem("s",2)),1==l&&c(),n||(n=2,s.setItem("n",2)),1==n&&g()});
+window.main.currentColorScheme = localStorage.getItem('s') == 1 ? 'dark' : 'light'
+window.onload = () => {
+    let d = document,
+        l = localStorage,
+        s = l.getItem('s'),
+        n = l.getItem('n'),
+        h = d.documentElement,
+        m = d.getElementById("dark-mode"),
+        b = () => {
+            h.dataset.colorScheme = 'light'
+            m.innerHTML = "dark"
+        },
+        c = () => {
+            h.dataset.colorScheme = 'dark'
+            m.innerHTML = "light"
+        },
+        o = d.getElementById("sans-font"),
+        e = () => {
+            h.dataset.fontScheme = 'serif'
+            o.innerHTML = "sans"
+        },
+        g = () => {
+            h.dataset.fontScheme = 'sans'
+            o.innerHTML = "serif"
+        };
+
+    function changeCommentMode(mode) {
+        h.dataset.colorScheme = mode
+        const e = document.querySelectorAll("#comment div div");
+        e.length && e.forEach(n => {
+            let s;
+            const r = (s = n.shadowRoot) == null ? void 0 : s.querySelector(".halo-comment-widget");
+            r && (r.classList.remove('light', 'dark'), r.classList.add(mode))
+        }
+        )
+    }
+
+    m.onclick = () => {
+        if (s == 2) {
+            changeCommentMode('dark')
+            s = 1;
+            l.setItem('s', s);
+            c()
+        } else {
+            changeCommentMode('light')
+            s = 2;
+            l.setItem('s', s);
+            b()
+        }
+    };
+    o.onclick = () => {
+        if (n == 2) {
+            n = 1;
+            l.setItem('n', n);
+            g()
+        } else {
+            n = 2;
+            l.setItem('n', n);
+            e()
+        }
+    };
+    if (!s) {
+        s = 2;
+        l.setItem('s', 2)
+    };
+    if (s == 1) {
+        c()
+    };
+    if (!n) {
+        n = 2;
+        l.setItem('n', 2)
+    };
+    if (n == 1) {
+        g()
+    };
+
+}

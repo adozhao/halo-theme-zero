@@ -16,7 +16,7 @@ html {
   --title-stack: "Playfair Display SC", "Georgia", serif;
 }
 
-html.dark{
+html[data-color-scheme=dark]{
   --bg-color: #212121;
   --code-bg-color: #292929;
   --text-color: #fff;
@@ -28,7 +28,7 @@ html.dark{
   --selection-color: #acc1c9;
 }
 
-html.sans{
+html[data-font-scheme=sans]{
   --body-stack: "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif;
 }
 
