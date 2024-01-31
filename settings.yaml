@@ -1,7 +1,7 @@
 apiVersion: v1alpha1
 kind: Setting
 metadata:
-  name: halo-theme-zero-setting
+  name: ado-zero-setting
 spec:
   forms:
     - group: beian
