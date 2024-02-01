@@ -16,7 +16,7 @@
 1. 点击 [链接](https://www.halo.run/store/apps) 进入Halo官方应用市场
 2. 搜索该主题`Zero`并点击 `下载` 按钮
 3. 在弹出的对话框中，输入您的网站地址，点击`安装`即可
-4. 
+
 ### 主题说明
 - 该主题基于 [hexo-theme-ascent](https://github.com/cjquines/hexo-theme-ascent) 主题制作，原作者为 `cjquines`，非常感谢做出这么优秀的主题! 
 - 如需高亮显示代码，您可选择安装插件：[highlight.js 代码高亮](https://github.com/halo-sigs/plugin-highlightjs)
