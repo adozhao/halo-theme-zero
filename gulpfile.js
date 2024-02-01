@@ -8,14 +8,11 @@ var packageInfo = require('./package.json');
 
 gulp.task('process', function(done) {
     console.log('start build...')
-    // todo
-    setTimeout(()=>{
-        gulp.src('./templates/assets/dist/main.js')
-            .pipe(babel())
-            .pipe(uglify())
-            .pipe(gulp.dest(buildPath + 'templates/assets/dist'))
-        done()
-    }, 2000)    
+    gulp.src('./templates/assets/dist/main.js')
+        .pipe(babel())
+        .pipe(uglify())
+        .pipe(gulp.dest(buildPath + 'templates/assets/dist'))
+    done()    
 })
 
 gulp.task('zip', function() {
@@ -33,9 +30,7 @@ gulp.task('copy', function() {
 
 gulp.task('clean', function() {
     console.log('start clear...' + buildPath)
-    gulp.src('./release/*').pipe(clean())
-    return gulp.src('./' + buildPath + '*').pipe(clean())
-     
+    return gulp.src(['./release/*', './' + buildPath + '*']).pipe(clean())
 })
 
 gulp.task('build', gulp.series(['clean', 'copy', 'process', 'zip'], (done) => {
