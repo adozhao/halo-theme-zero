@@ -48,15 +48,16 @@ body {
  
 /* wrapper */
 #wrapper {
+  display: flex;
+  flex-direction: column;
   background: none;
   border: none;
   box-sizing: border-box;
-  display: block;
-  /* margin: 3rem auto 10rem auto; */
   margin: 0 auto;
   max-width: 100%;
   padding: 4em 1em 1em;
   width: 32em;
+  min-height: 100vh;
 }
  
 @media all and (max-width:760px) {#wrapper {margin-top: 3rem;}}
@@ -477,7 +478,7 @@ td, th, table caption, table td, table th {
 }
 
 #content{
-  min-height: 500px;
+  flex-grow: 1;
 }
 
 #footer{
@@ -486,7 +487,7 @@ td, th, table caption, table td, table th {
   justify-content: space-between;
   text-align: center;
   color: var(--secondary-color);
-  margin-top: 50px;
+  margin-top: 1em;
   font-size: 0.8em;
   line-height: 1.5;
 }
