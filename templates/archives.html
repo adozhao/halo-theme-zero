@@ -4,7 +4,7 @@
 <th:block th:fragment="content">
   <div id="content">
     <section class="archives-wrap" th:each="archive, status : ${archives.items}">
-      <input class="hidden-input" type="checkbox" name="expand" id="expand">
+      <input class="hidden-input" type="checkbox" name="expand">
       <th:block th:each="month : ${archive.months}">
         <label class="month" for="expand" th:text="|${month.month} / ${archive.year}|"></label>
         <div class="archives">

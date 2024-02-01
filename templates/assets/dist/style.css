@@ -153,7 +153,6 @@ body {
 
 .month {
   color: var(--secondary-color);
-  cursor: pointer;
   font-family: var(--secondary-stack);
 }
 
@@ -359,7 +358,7 @@ blockquote {
   transition-property: background;
 }
  
-#title a:hover, .article-title a:hover, a.nav-link:hover, .archive-article-title a:hover, .article-nav a:hover, a.page-number:hover, a.extend:hover, .month:hover, .article-footer a:hover, .article-category a:hover, .article-tag a:hover, .article-more-link a:hover, #footer a:hover {
+#title a:hover, .article-title a:hover, a.nav-link:hover, .archive-article-title a:hover, .article-nav a:hover, a.page-number:hover, a.extend:hover .article-footer a:hover, .article-category a:hover, .article-tag a:hover, .article-more-link a:hover, #footer a:hover {
   -webkit-transition-duration: .3s;
   -webkit-transition-property: background;
   background: var(--link-bg-color) !important;

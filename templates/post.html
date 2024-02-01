@@ -5,9 +5,7 @@
           <article class="article article-type-post" itemprop="blogPost" itemscope="">
             <div class="article-inner">
               <header class="article-header">
-                <h2 class="article-title" itemprop="name">
-                  <a th:href="@{${post.status?.permalink}}" th:text="${post.spec.title}"></a>
-                </h2>
+                <h2 class="article-title" th:text="${post.spec.title}" itemprop="name"></h2>
                 <div class="article-meta">
                   <time class="article-date" 
                     itemprop="datePublished"
