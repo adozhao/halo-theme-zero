@@ -4,6 +4,7 @@ var babel = require('gulp-babel');
 var buildPath = 'build/';
 var clean = require('gulp-clean');
 var zip = require('gulp-zip')
+var cssmin = require('gulp-cssmin')
 var packageInfo = require('./package.json');
 
 gulp.task('process', function(done) {
@@ -11,6 +12,9 @@ gulp.task('process', function(done) {
     gulp.src('./templates/assets/dist/main.js')
         .pipe(babel())
         .pipe(uglify())
+        .pipe(gulp.dest(buildPath + 'templates/assets/dist'))
+    gulp.src('./templates/assets/dist/style.css')
+        .pipe(cssmin())
         .pipe(gulp.dest(buildPath + 'templates/assets/dist'))
     done()    
 })
