@@ -1,5 +1,5 @@
 /* general */
-html {
+:root {
   --bg-color: #fafafa;
   --code-bg-color: #f4f4f4;
   --text-color: #212121;
@@ -14,7 +14,11 @@ html {
   --title-stack: "Playfair Display SC", "Georgia", serif;
 }
 
-html[data-color-scheme=dark]{
+[data-hidden]{
+  visibility: hidden;
+}
+
+[data-color-scheme=dark]{
   --bg-color: #212121;
   --code-bg-color: #292929;
   --text-color: #fff;
@@ -26,7 +30,7 @@ html[data-color-scheme=dark]{
   --selection-color: #acc1c9;
 }
 
-html[data-font-scheme=sans]{
+[data-font-scheme=sans]{
   --body-stack: "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif;
 }
 

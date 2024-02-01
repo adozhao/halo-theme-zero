@@ -27,42 +27,47 @@ window.onload = () => {
 
     themeModeEl.onclick = function(){
         if (themeMode === 'light') {
+            html.dataset.colorScheme = 'dark'
             changeCommentMode('dark')
             themeMode = 'dark'
             localStorage.setItem('theme-mode', 'dark')
-            html.dataset.colorScheme = 'dark'
             themeModeEl.innerText = "light"
         } else {
+            html.dataset.colorScheme = 'light'
             changeCommentMode('light')
             themeMode = 'light'
             localStorage.setItem('theme-mode', 'light')
-            html.dataset.colorScheme = 'light'
             themeModeEl.innerText = "dark"
         }
     }
 
     fontModeEl.onclick = function(){
         if (fontMode === 'serif') {
+            html.dataset.fontScheme = 'sans'
             fontMode = 'sans'
             localStorage.setItem('font-mode', 'sans');
-            html.dataset.fontScheme = 'sans'
             fontModeEl.innerText = 'serif'
         } else {
+            html.dataset.fontScheme = 'serif'
             fontMode = 'serif'
             localStorage.setItem('font-mode', 'serif');
-            html.dataset.fontScheme = 'serif'
             fontModeEl.innerText = "sans"
         }
     }
 
     if (!themeMode) {
+        delete html.dataset.hidden
         themeMode = 'light'
         localStorage.setItem('theme-mode', 'light')
     }
 
     if (themeMode === 'dark') {
         html.dataset.colorScheme = 'dark'
+        delete html.dataset.hidden
         themeModeEl.innerText = "light"
+    }
+    else{
+        delete html.dataset.hidden
     }
 
     if (!fontMode) {
