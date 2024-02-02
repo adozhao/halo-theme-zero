@@ -1,6 +1,6 @@
 window.main=function(n){"use strict";const e="";function t(u,c){return u+c}return n.count=t,Object.defineProperty(n,Symbol.toStringTag,{value:"Module"}),n}({});
 main.currentColorScheme = localStorage.getItem('theme-mode') === 'dark' ? 'dark' : 'light'
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', function () {
     let themeMode = localStorage.getItem('theme-mode')
     let fontMode = localStorage.getItem('font-mode')
     let html = document.documentElement
@@ -109,12 +109,11 @@ window.onload = () => {
 
     if (!fontMode) {
         fontMode = 'serif'
-        localStorage.setItem('theme-mode', 'light')
+        localStorage.setItem('font-mode', 'serif')
     }
 
     if (fontMode === 'sans') {
         html.dataset.fontScheme = 'sans'
         fontModeEl.innerText = "serif"
     }
-
-}
+});
