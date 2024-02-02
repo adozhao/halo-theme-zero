@@ -1,16 +1,23 @@
 window.main=function(n){"use strict";const e="";function t(u,c){return u+c}return n.count=t,Object.defineProperty(n,Symbol.toStringTag,{value:"Module"}),n}({});
-main.currentColorScheme = localStorage.getItem('theme-mode') === 'dark' ? 'dark' : 'light'
+const html = document.documentElement
+const doc = document
+if(localStorage.getItem('theme-mode') === 'dark'){
+    main.currentColorScheme = 'dark'
+    html.dataset.colorScheme = 'dark'
+}
+else{
+    main.currentColorScheme = 'light'
+    html.dataset.colorScheme = 'light'
+}
 document.addEventListener('DOMContentLoaded', function () {
     let themeMode = localStorage.getItem('theme-mode')
     let fontMode = localStorage.getItem('font-mode')
-    let html = document.documentElement
-    let doc = document
-    let themeModeEl = document.getElementById("dark-mode")
-    let fontModeEl = document.getElementById("sans-font")
+    const themeModeEl = doc.getElementById("dark-mode")
+    const fontModeEl = doc.getElementById("sans-font")
 
     function changeCommentMode(mode) {
         html.dataset.colorScheme = mode
-        const shadowRootParent = document.querySelectorAll("#comment div div");
+        const shadowRootParent = doc.querySelectorAll("#comment div div")
         if(shadowRootParent.length){
             shadowRootParent.forEach(parent => {
                     let shadowRoot = parent.shadowRoot
@@ -27,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function setModeAnimation(cx, cy, pos){
-        const clip = [`circle(0px at ${cx}px ${cy}px)`, `circle(${pos}px at ${cx}px ${cy}px)`];
-        document.documentElement.animate({
+        const clip = [`circle(0px at ${cx}px ${cy}px)`, `circle(${pos}px at ${cx}px ${cy}px)`]
+        html.animate({
             clipPath: themeMode === "dark" ? clip : [...clip].reverse()
         }, {
             duration: 350,
@@ -93,18 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (!themeMode) {
-        delete html.dataset.hidden
         themeMode = 'light'
         localStorage.setItem('theme-mode', 'light')
     }
 
     if (themeMode === 'dark') {
         html.dataset.colorScheme = 'dark'
-        delete html.dataset.hidden
         themeModeEl.innerText = "light"
-    }
-    else{
-        delete html.dataset.hidden
     }
 
     if (!fontMode) {
