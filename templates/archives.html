@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{modules/layout :: html(title = '归档', hero = null, content = ~{::content}, head = null, footer = null, sidebar = ~{::sidebar}, contentClass = '')}">
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{modules/layout :: html(title = '归档', content = ~{::content})}">
 <th:block th:fragment="content">
   <div id="content">
     <section class="archives-wrap" th:each="archive, status : ${archives.items}">
