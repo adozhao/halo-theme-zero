@@ -497,6 +497,15 @@ td, th, table caption, table td, table th {
   line-height: 1.5;
 }
 
+/* error page */
+.error-box{
+  text-align: center;
+  margin-top: 5em;
+}
+.error-box .status{
+  font-size: 4em;
+  text-decoration: underline;
+}
 
 /* highlight */
 code {
