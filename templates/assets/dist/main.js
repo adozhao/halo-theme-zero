@@ -4,6 +4,7 @@ window.onload = () => {
     let themeMode = localStorage.getItem('theme-mode')
     let fontMode = localStorage.getItem('font-mode')
     let html = document.documentElement
+    let doc = document
     let themeModeEl = document.getElementById("dark-mode")
     let fontModeEl = document.getElementById("sans-font")
 
@@ -25,19 +26,55 @@ window.onload = () => {
         }
     }
 
-    themeModeEl.onclick = function(){
+    function setModeAnimation(cx, cy, pos){
+        const clip = [`circle(0px at ${cx}px ${cy}px)`, `circle(${pos}px at ${cx}px ${cy}px)`];
+        document.documentElement.animate({
+            clipPath: themeMode === "dark" ? clip : [...clip].reverse()
+        }, {
+            duration: 350,
+            easing: "ease-in",
+            pseudoElement: themeMode === "dark" ? "::view-transition-new(root)" : "::view-transition-old(root)"
+        })
+    }
+
+    function changeThemeMode(mode){
+        html.dataset.colorScheme = mode
+        changeCommentMode(mode)
+        themeMode = mode
+        localStorage.setItem('theme-mode', mode)
+        themeModeEl.innerText = mode === "light"? 'dark' : 'light'
+    }
+
+    themeModeEl.onclick = function(e){
+        const cx = e.clientX
+        const cy = e.clientY
+        const pos = Math.hypot(Math.max(cx, innerWidth - cx), Math.max(cy, innerHeight - cy))
         if (themeMode === 'light') {
-            html.dataset.colorScheme = 'dark'
-            changeCommentMode('dark')
-            themeMode = 'dark'
-            localStorage.setItem('theme-mode', 'dark')
-            themeModeEl.innerText = "light"
+            if(doc.startViewTransition){
+                doc.startViewTransition(() =>{
+                    changeThemeMode('dark')
+                })
+                .ready.then(()=>{
+                    setModeAnimation(cx, cy, pos)
+                })
+            }
+            else{
+                changeThemeMode('dark')
+            }
+           
+           
         } else {
-            html.dataset.colorScheme = 'light'
-            changeCommentMode('light')
-            themeMode = 'light'
-            localStorage.setItem('theme-mode', 'light')
-            themeModeEl.innerText = "dark"
+            if(doc.startViewTransition){
+                doc.startViewTransition(() =>{
+                    changeThemeMode('light')
+                })
+                .ready.then(()=>{
+                    setModeAnimation(cx, cy, pos)
+                })
+            }
+            else{
+                changeThemeMode('light')
+            }
         }
     }
 
