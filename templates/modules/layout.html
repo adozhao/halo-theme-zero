@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div id="wrapper">
+  <div id="wrapper" th:classappend="${theme.config.layout.main_width}">
     <div th:replace="~{modules/header :: header}"></div>
     <th:block th:replace="${content}" />
     <div th:replace="~{modules/footer :: footer}"></div>

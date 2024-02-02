@@ -4,8 +4,22 @@ metadata:
   name: ado-zero-setting
 spec:
   forms:
+    - group: layout
+      label: 布局设置
+      formSchema:
+        - $formkit: select
+          name: main_width
+          label: 主体内容显示宽度
+          value: ""
+          options:
+            - label: "常规"
+              value: ""
+            - label: "中等"
+              value: "medium"
+            - label: "较宽"
+              value: "large"
     - group: beian
-      label: 备案设置
+      label: 备案信息
       formSchema:
         - $formkit: text
           name: icp_text

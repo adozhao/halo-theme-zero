@@ -64,6 +64,14 @@ body {
   width: 32em;
   min-height: 100vh;
 }
+
+#wrapper.medium{
+  width: 36em;
+}
+
+#wrapper.large{
+  width: 40em;
+}
  
 @media all and (max-width:760px) {#wrapper {margin-top: 3rem;}}
 @media all and (max-width:520px) {#wrapper {margin-top: 1rem;}}
