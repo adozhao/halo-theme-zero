@@ -13,5 +13,5 @@ spec:
   repo: https://github.com/adozhao/halo-theme-zero.git
   settingName: "ado-zero-setting"
   configMapName: "ado-zero-configMap"
-  version: 1.2.0_bata3
+  version: 1.2.0_beta2
   require: ">=2.0.0"

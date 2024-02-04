@@ -1,7 +1,11 @@
 window.main=function(n){"use strict";const e="";function t(u,c){return u+c}return n.count=t,Object.defineProperty(n,Symbol.toStringTag,{value:"Module"}),n}({});
-const html = document.documentElement
+let themeMode = localStorage.getItem('theme-mode') || 'light'
+let fontMode = localStorage.getItem('font-mode') || 'serif'
 const doc = document
-if(localStorage.getItem('theme-mode') === 'dark'){
+const html = doc.documentElement
+let themeModeEl = null
+let fontModeEl = null
+if(themeMode === 'dark'){
     main.currentColorScheme = 'dark'
     html.dataset.colorScheme = 'dark'
 }
@@ -9,47 +13,18 @@ else{
     main.currentColorScheme = 'light'
     html.dataset.colorScheme = 'light'
 }
-document.addEventListener('DOMContentLoaded', function () {
-    let themeMode = localStorage.getItem('theme-mode')
-    let fontMode = localStorage.getItem('font-mode')
-    const themeModeEl = doc.getElementById("dark-mode")
-    const fontModeEl = doc.getElementById("sans-font")
 
-    function changeCommentMode(mode) {
-        html.dataset.colorScheme = mode
-        const shadowRootParent = doc.querySelectorAll("#comment div div")
-        if(shadowRootParent.length){
-            shadowRootParent.forEach(parent => {
-                    let shadowRoot = parent.shadowRoot
-                    if(shadowRoot){
-                        const commentWidget = shadowRoot.querySelector('.halo-comment-widget')
-                        if(commentWidget){
-                            commentWidget.classList.remove('light', 'dark')
-                            commentWidget.classList.add(mode)
-                        }
-                    }
-                }
-            )
-        }
+doc.addEventListener('DOMContentLoaded', ()=>{
+    themeModeEl = doc.getElementById("dark-mode")
+    fontModeEl = doc.getElementById("sans-font")
+
+    if (fontMode === 'sans') {
+        html.dataset.fontScheme = 'sans'
+        fontModeEl.innerText = "serif"
     }
-
-    function setModeAnimation(cx, cy, pos){
-        const clip = [`circle(0px at ${cx}px ${cy}px)`, `circle(${pos}px at ${cx}px ${cy}px)`]
-        html.animate({
-            clipPath: themeMode === "dark" ? clip : [...clip].reverse()
-        }, {
-            duration: 350,
-            easing: "ease-in",
-            pseudoElement: themeMode === "dark" ? "::view-transition-new(root)" : "::view-transition-old(root)"
-        })
-    }
-
-    function changeThemeMode(mode){
-        html.dataset.colorScheme = mode
-        changeCommentMode(mode)
-        themeMode = mode
-        localStorage.setItem('theme-mode', mode)
-        themeModeEl.innerText = mode === "light"? 'dark' : 'light'
+    else{
+        html.dataset.fontScheme = 'serif'
+        fontModeEl.innerText = "sans"
     }
 
     themeModeEl.onclick = function(e){
@@ -68,8 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
             else{
                 changeThemeMode('dark')
             }
-           
-           
         } else {
             if(doc.startViewTransition){
                 doc.startViewTransition(() =>{
@@ -98,24 +71,41 @@ document.addEventListener('DOMContentLoaded', function () {
             fontModeEl.innerText = "sans"
         }
     }
+})
 
-    if (!themeMode) {
-        themeMode = 'light'
-        localStorage.setItem('theme-mode', 'light')
+function changeCommentMode(mode) {
+    html.dataset.colorScheme = mode
+    const shadowRootParent = doc.querySelectorAll("#comment div div")
+    if(shadowRootParent.length){
+        shadowRootParent.forEach(parent => {
+                let shadowRoot = parent.shadowRoot
+                if(shadowRoot){
+                    const commentWidget = shadowRoot.querySelector('.halo-comment-widget')
+                    if(commentWidget){
+                        commentWidget.classList.remove('light', 'dark')
+                        commentWidget.classList.add(mode)
+                    }
+                }
+            }
+        )
     }
+}
 
-    if (themeMode === 'dark') {
-        html.dataset.colorScheme = 'dark'
-        themeModeEl.innerText = "light"
-    }
+function setModeAnimation(cx, cy, pos){
+    const clip = [`circle(0px at ${cx}px ${cy}px)`, `circle(${pos}px at ${cx}px ${cy}px)`]
+    html.animate({
+        clipPath: themeMode === "dark" ? clip : [...clip].reverse()
+    }, {
+        duration: 350,
+        easing: "ease-in",
+        pseudoElement: themeMode === "dark" ? "::view-transition-new(root)" : "::view-transition-old(root)"
+    })
+}
 
-    if (!fontMode) {
-        fontMode = 'serif'
-        localStorage.setItem('font-mode', 'serif')
-    }
-
-    if (fontMode === 'sans') {
-        html.dataset.fontScheme = 'sans'
-        fontModeEl.innerText = "serif"
-    }
-});
+function changeThemeMode(mode){
+    html.dataset.colorScheme = mode
+    changeCommentMode(mode)
+    themeMode = mode
+    localStorage.setItem('theme-mode', mode)
+    themeModeEl.innerText = mode === "light"? 'dark' : 'light'
+}
