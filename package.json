@@ -1,6 +1,6 @@
 {
   "name": "halo-theme-zero",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "回归 Blog 本质，简单、放松、专注",
   "scripts": {
     "build": "gulp build"
