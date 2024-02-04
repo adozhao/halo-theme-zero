@@ -14,6 +14,12 @@ else{
     html.dataset.colorScheme = 'light'
 }
 
+window.onload = ()=>{
+    if(doc.readyState === 'complete'){
+        delete html.dataset.htmlHidden
+    }
+}
+
 doc.addEventListener('DOMContentLoaded', ()=>{
     themeModeEl = doc.getElementById("dark-mode")
     fontModeEl = doc.getElementById("sans-font")
@@ -62,12 +68,12 @@ doc.addEventListener('DOMContentLoaded', ()=>{
         if (fontMode === 'serif') {
             html.dataset.fontScheme = 'sans'
             fontMode = 'sans'
-            localStorage.setItem('font-mode', 'sans');
+            localStorage.setItem('font-mode', 'sans')
             fontModeEl.innerText = 'serif'
         } else {
             html.dataset.fontScheme = 'serif'
             fontMode = 'serif'
-            localStorage.setItem('font-mode', 'serif');
+            localStorage.setItem('font-mode', 'serif')
             fontModeEl.innerText = "sans"
         }
     }
