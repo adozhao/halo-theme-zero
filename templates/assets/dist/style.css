@@ -75,6 +75,7 @@ body {
  
 @media all and (max-width:760px) {#wrapper {margin-top: 3rem;}}
 @media all and (max-width:520px) {#wrapper {margin-top: 1rem;}}
+@media all and (max-width:1200px) {#lantern {display: none;}}
  
 /* header */
 #header {
@@ -578,14 +579,14 @@ pre::-webkit-scrollbar-thumb {
 .lantern-box-1 {
 	position: fixed;
 	top: -40px;
-	right: 8em;
+	right: 80px;
 	z-index: 999;
 }
  
 .lantern-box-2 {
 	position: fixed;
 	top: -30px;
-	right: 10em;
+	right: 100px;
 	z-index: 999;
 }
 

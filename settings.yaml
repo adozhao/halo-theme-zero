@@ -36,6 +36,7 @@ spec:
           name: lantern
           label: 灯笼状态
           value: false
+          help: "宽度小于1200px时不显示挂件"
           options:
             - label: "开启"
               value: true
@@ -43,7 +44,7 @@ spec:
               value: false
         - $formkit: select
           name: festival
-          label: 节日
+          label: 选择节日
           value: "default"
           options:
             - label: "默认"
