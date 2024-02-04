@@ -1,4 +1,5 @@
 ### 主题预览  
+![](https://github.com/adozhao/halo-theme-zero/blob/main/screenshot.png)
 > 如果您正在使用该主题，您可尝试提交 [issue](https://github.com/adozhao/halo-theme-zero/issues/1) 或 Email Me: ayiomail@163.com ，您的站点将出现在这儿~
 
 **演示站点：**  
