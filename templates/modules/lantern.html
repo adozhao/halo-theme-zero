@@ -1,0 +1,38 @@
+<lantern id="lantern">
+    <div class="lantern-box">
+        <div class="lantern-box-1">
+            <div class="lantern">
+            <div class="lantern-line"></div>
+            <div class="lantern-body">
+                <div class="lantern-center">
+                    <div class="lantern-text" th:switch="${theme.config.pendant.festival}">
+                        <span th:case="spring">节</span>
+                        <span th:case="national">庆</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lantern-footer">
+                <div class="com1"></div>
+                <div class="com2"></div>
+            </div>
+            </div>
+        </div>
+        <div class="lantern-box-2">
+            <div class="lantern">
+            <div class="lantern-line"></div>
+            <div class="lantern-body">
+                <div class="lantern-center">
+                    <div class="lantern-text" th:switch="${theme.config.pendant.festival}">
+                        <span th:case="spring">春</span>
+                        <span th:case="national">国</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lantern-footer">
+                <div class="com1"></div>
+                <div class="com2"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</lantern>

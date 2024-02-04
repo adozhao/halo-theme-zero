@@ -29,3 +29,26 @@ spec:
           name: icp_link
           label: ICP备案跳转链接
           value: https://beian.miit.gov.cn/
+    - group: pendant
+      label: 节日挂件
+      formSchema:
+        - $formkit: radio
+          name: lantern
+          label: 灯笼状态
+          value: false
+          options:
+            - label: "开启"
+              value: true
+            - label: "关闭"
+              value: false
+        - $formkit: select
+          name: festival
+          label: 节日
+          value: "default"
+          options:
+            - label: "默认"
+              value: "default"
+            - label: "春节"
+              value: "spring"
+            - label: "国庆"
+              value: "national"

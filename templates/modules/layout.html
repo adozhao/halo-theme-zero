@@ -11,15 +11,18 @@
 </head>
 
 <body>
-  <div id="wrapper" th:classappend="${theme.config.layout.main_width}">
-    <div th:replace="~{modules/header :: header}"></div>
+  <div id="wrapper" th:class="${theme.config.layout.main_width}">
+    <th:block th:replace="~{modules/header :: header}"></th:block>
     <th:block th:replace="${content}" />
-    <div th:replace="~{modules/footer :: footer}"></div>
+    <th:block th:replace="~{modules/footer :: footer}"></th:block>
     <div id="settings-container">
       <div id="dark-mode">dark</div>
       <div id="sans-font">sans</div>
     </div>
   </div>
+  <th-block th:if="${theme.config.pendant.lantern}">
+    <div th:replace="~{modules/lantern :: lantern}"></div>
+  </th-block>
 </body>
 
 </html>
