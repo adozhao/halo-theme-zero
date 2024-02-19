@@ -2,9 +2,13 @@
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{modules/layout :: html(title = ${singlePage.spec.title}, content = ~{::content})}"> 
   <th:block th:fragment="content">
     <div id="content">
-      <div class="article-entry" itemprop="articleBody">
-        <article th:utext="${singlePage.content.content}"></article>
-      </div>
+      <article class="article article-type-post" itemprop="blogPost" itemscope="">
+        <div class="article-inner">
+          <div class="article-entry" itemprop="articleBody">
+            <article th:utext="${singlePage.content.content}"></article>
+          </div>
+        </div>
+      </article>
       <div id="comment" th:if="${haloCommentEnabled}">
         <halo:comment
           group="content.halo.run"
