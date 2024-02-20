@@ -60,14 +60,8 @@ spec:
               value: true
             - label: "关闭"
               value: false
-        - $formkit: select
-          name: festival
-          label: 选择节日
-          value: "default"
-          options:
-            - label: "默认"
-              value: "default"
-            - label: "春节"
-              value: "spring"
-            - label: "国庆"
-              value: "national"
+        - $formkit: text
+          name: festival_text
+          label: 灯笼标签
+          help: "限制输入两个字符，多出内容会进行省略"
+          placeholder: "请输入标签内容"

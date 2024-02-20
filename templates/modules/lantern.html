@@ -5,9 +5,8 @@
             <div class="lantern-line"></div>
             <div class="lantern-body">
                 <div class="lantern-center">
-                    <div class="lantern-text" th:switch="${theme.config.pendant.festival}">
-                        <span th:case="spring">节</span>
-                        <span th:case="national">庆</span>
+                    <div class="lantern-text">
+                        <span th:if="${theme.config.pendant.festival_text.length ge 2}" th:text="${theme.config.pendant.festival_text.substring(1, 2)}"></span>
                     </div>
                 </div>
             </div>
@@ -22,9 +21,8 @@
             <div class="lantern-line"></div>
             <div class="lantern-body">
                 <div class="lantern-center">
-                    <div class="lantern-text" th:switch="${theme.config.pendant.festival}">
-                        <span th:case="spring">春</span>
-                        <span th:case="national">国</span>
+                    <div class="lantern-text">
+                        <span th:if="${theme.config.pendant.festival_text.length ge 1}" th:text="${theme.config.pendant.festival_text.substring(0, 1)}"></span>
                     </div>
                 </div>
             </div>
