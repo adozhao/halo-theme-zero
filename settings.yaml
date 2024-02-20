@@ -18,6 +18,15 @@ spec:
               value: "medium"
             - label: "较宽"
               value: "large"
+        - $formkit: radio
+          name: bg_texture
+          label: 背景纹理
+          value: false
+          options:
+            - label: "开启"
+              value: true
+            - label: "关闭"
+              value: false
     - group: beian
       label: 备案信息
       formSchema:

@@ -10,7 +10,7 @@
   <script th:src="@{/assets/dist/main.js?v={version}(version=${theme.spec.version})}"></script>
 </head>
 
-<body>
+<body th:class="${theme.config.layout.bg_texture}? 'texture' : ''">
   <div id="wrapper" th:class="${theme.config.layout.main_width}">
     <th:block th:replace="~{modules/header :: header}"></th:block>
     <th:block th:replace="${content}" />

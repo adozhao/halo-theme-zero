@@ -50,6 +50,10 @@ body {
   position: relative;
   width: 100%;
 }
+
+body.texture{
+  background-image: url(../texture.png);
+}
  
 /* wrapper */
 #wrapper {
