@@ -707,7 +707,7 @@ pre::-webkit-scrollbar-thumb {
 }
  
 .lantern-text {
-	font-family: 华文行楷,Arial,Lucida Grande,Tahoma,sans-serif;
+	font-family: serif;
 	font-size: 3.2rem;
 	color: #dc8f03;
 	font-weight: bold;
