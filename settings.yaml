@@ -5,7 +5,7 @@ metadata:
 spec:
   forms:
     - group: layout
-      label: 布局设置
+      label: 布局样式
       formSchema:
         - $formkit: select
           name: main_width
@@ -19,7 +19,7 @@ spec:
             - label: "较宽"
               value: "large"
         - $formkit: radio
-          name: bg_texture
+          name: open_texture
           label: 背景纹理
           value: false
           options:
@@ -27,6 +27,15 @@ spec:
               value: true
             - label: "关闭"
               value: false
+        - $formkit: select
+          name: texture
+          label: 选择纹理
+          value: "default"
+          options:
+            - label: "默认"
+              value: "texture-default"
+            - label: "像素"
+              value: "texture-pixel"
     - group: beian
       label: 备案信息
       formSchema:
