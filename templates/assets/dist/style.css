@@ -23,7 +23,8 @@
   --halo-comment-widget-base-font-size: clamp(16px, 2.4vw, 18px);
   --halo-comment-widget-base-font-family: var(--body-stack);
   --halo-comment-widget-base-color: var(--text-color);
-  --halo-comment-widget-component-form-button-submit-color: var(--text-color)
+  --halo-comment-widget-component-form-button-submit-color: var(--text-color);
+  --halo-comment-widget-base-line-height: 1.8;
 }
 
 [data-html-hidden]{
