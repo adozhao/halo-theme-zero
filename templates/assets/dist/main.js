@@ -79,24 +79,6 @@ doc.addEventListener('DOMContentLoaded', ()=>{
     }
 })
 
-function changeCommentMode(mode) {
-    html.dataset.colorScheme = mode
-    const shadowRootParent = doc.querySelectorAll("#comment div div")
-    if(shadowRootParent.length){
-        shadowRootParent.forEach(parent => {
-                let shadowRoot = parent.shadowRoot
-                if(shadowRoot){
-                    const commentWidget = shadowRoot.querySelector('.halo-comment-widget')
-                    if(commentWidget){
-                        commentWidget.classList.remove('light', 'dark')
-                        commentWidget.classList.add(mode)
-                    }
-                }
-            }
-        )
-    }
-}
-
 function setModeAnimation(cx, cy, pos){
     const clip = [`circle(0px at ${cx}px ${cy}px)`, `circle(${pos}px at ${cx}px ${cy}px)`]
     html.animate({
@@ -110,7 +92,6 @@ function setModeAnimation(cx, cy, pos){
 
 function changeThemeMode(mode){
     html.dataset.colorScheme = mode
-    changeCommentMode(mode)
     themeMode = mode
     localStorage.setItem('theme-mode', mode)
     themeModeEl.innerText = mode === "light"? 'dark' : 'light'

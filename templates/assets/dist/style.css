@@ -13,13 +13,24 @@
   --secondary-stack: "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif;
   --title-stack: "Playfair Display SC", "Georgia", serif;
   --highlight-stack: "Roboto Mono", "Inconsolata", "Consolas", monospace;
+
+  /* halo common reset */
+  --halo-comment-widget-base-border-radius: 0;
+  --halo-comment-widget-component-form-input-border-color-focus: tranparent;
+  --halo-comment-widget-component-form-input-box-shadow-focus: 0 0 0 0 rgba(87, 85, 217, 0.2);
+  --halo-comment-widget-component-form-button-submit-bg-color: var(--tertiary-color);
+  --halo-comment-widget-component-form-button-submit-border-color: tranparent;
+  --halo-comment-widget-base-font-size: clamp(16px, 2.4vw, 18px);
+  --halo-comment-widget-base-font-family: var(--body-stack);
+  --halo-comment-widget-base-color: var(--text-color);
+  --halo-comment-widget-component-form-button-submit-color: var(--text-color)
 }
 
 [data-html-hidden]{
   visibility: hidden;
 }
 
-[data-color-scheme=dark]{
+[data-color-scheme='dark']{
   --bg-color: #212121;
   --code-bg-color: #292929;
   --text-color: #fff;
@@ -29,6 +40,10 @@
   --link-hover-color: #96b1bb;
   --link-bg-color: #5d828e;
   --selection-color: #acc1c9;
+
+  /* halo common reset */
+  --halo-comment-widget-component-form-button-submit-bg-color: #0d1731;
+  --halo-comment-widget-component-form-button-submit-color: #fff;
 }
 
 [data-font-scheme=sans]{
