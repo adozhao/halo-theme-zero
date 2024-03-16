@@ -2,22 +2,22 @@
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{modules/layout :: html(title = '归档', content = ~{::content})}">
 <th:block th:fragment="content">
   <div id="content">
-    <section class="archives-wrap" th:each="archive, status : ${archives.items}">
+    <section class="archives-wrap" th:each="archives, status : ${archives.items}">
       <input class="hidden-input" type="checkbox" name="expand">
-      <th:block th:each="month : ${archive.months}">
-        <label class="month" for="expand" th:text="|${month.month} / ${archive.year}|"></label>
+      <th:block th:each="archive : ${archives}">
+        <label class="year" for="expand" th:text="${archive.year}|"></label>
         <div class="archives">
-          <article class="archive-article archive-type-post" th:each="post : ${month.posts}">
-            <div class="archive-article-inner">
-              <header class="archive-article-header">
-                <time class="archive-article-date" th:text="${#dates.format(post.spec.publishTime, 'dd')}"
-                  itemprop="datePublished"></time>
-                <h2 class="archive-article-title" itemprop="name">
-                  <a th:href="${post.status.permalink}" th:text="${post.spec.title}"></a>
-                </h2>
-              </header>
-            </div>
-          </article>
+          <th:block th:each="month : ${archive.months}">
+            <article class="archive-article archive-type-post" th:each="post : ${month.posts}">
+              <div class="archive-article-inner">
+                <header class="archive-article-header">
+                  <h2 class="archive-article-title" itemprop="name">
+                    <a th:href="${post.status.permalink}" th:text="${post.spec.title}"></a>
+                  </h2>
+                </header>
+              </div>
+            </article>
+          </th:block>
         </div>
       </th:block>
     </section>
