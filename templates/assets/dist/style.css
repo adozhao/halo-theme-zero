@@ -505,9 +505,12 @@ td, th, table caption, table td, table th {
 }
 
 #sans-font, #dark-mode {
-  cursor: pointer;
   float: right;
-  padding: 0.5em;
+  width: 3em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  cursor: pointer;
 }
 
 /* links */
