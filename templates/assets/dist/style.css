@@ -48,7 +48,7 @@
 }
 
 [data-font-scheme=sans]{
-  --body-stack: "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif;
+  --body-stack: "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif;
 }
 
 html {
