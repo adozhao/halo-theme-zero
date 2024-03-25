@@ -6,6 +6,7 @@
 | 站点名称 | 站点地址 |
 | ------ | ------ |
 | ADO·ZONE | https://ado.zone |  
+| 码叔博客 | https://blog.unclecode.cn |
 
 ### 主题特性  
 - 多终端适配
