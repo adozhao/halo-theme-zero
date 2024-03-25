@@ -242,13 +242,11 @@ body.texture-pixel{
 }
 
 .archive-article-header {
-  align-items: center;
   display: inline-flex;
 }
 
 .archive-article-header .time{
   color: var(--secondary-color);
-  margin-left: 1em;
 }
 
 .archive-article-date {
