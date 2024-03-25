@@ -5,12 +5,17 @@
     <section class="archives-wrap" th:each="archives, status : ${archives.items}">
       <input class="hidden-input" type="checkbox" name="expand">
       <th:block th:each="archive : ${archives}">
-        <label class="year" for="expand" th:text="${archive.year}|"></label>
+        <label class="year" th:text="${archive.year}|"></label>
         <div class="archives">
           <th:block th:each="month : ${archive.months}">
             <article class="archive-article archive-type-post" th:each="post : ${month.posts}">
               <div class="archive-article-inner">
                 <header class="archive-article-header">
+                  <time class="time" 
+                  itemprop="datePublished"
+                  th:datetime="${#temporals.format(post.spec.publishTime, 'yyyy-MM-dd')}"
+                  th:text="${#temporals.format(post.spec.publishTime, 'MM-dd')}"
+                  ></time>
                   <h2 class="archive-article-title" itemprop="name">
                     <a th:href="${post.status.permalink}" th:text="${post.spec.title}"></a>
                   </h2>
