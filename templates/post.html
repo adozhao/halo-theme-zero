@@ -20,13 +20,13 @@
             </div>
           </article>
           <nav id="article-nav" class="article-nav" th:with="postCursor = ${postFinder.cursor(post.metadata.name)}">
-              <a th:if="${postCursor.hasNext()}" th:href="@{${postCursor.next.status.permalink}}" th:title="${postCursor.next.spec.title}" id="article-nav-newer" class="article-nav-link-wrap newer">
-                <strong class="article-nav-caption">下一篇</strong>
-                <div class="article-nav-title" th:text="${#strings.abbreviate(postCursor.next.spec.title,20)}"></div>
-              </a>
-              <a th:if="${postCursor.hasPrevious()}" th:href="@{${postCursor.previous.status.permalink}}" th:title="${postCursor.previous.spec.title}" id="article-nav-older" class="article-nav-link-wrap older">
+              <a th:style="'visibility:' + ${postCursor.hasPrevious()?'block':'hidden'}" th:href="@{${postCursor.previous.status.permalink}}" th:title="${postCursor.previous.spec.title}" id="article-nav-older" class="article-nav-link-wrap older">
                 <strong class="article-nav-caption">上一篇</strong>
                 <div class="article-nav-title" th:text="${#strings.abbreviate(postCursor.previous.spec.title,20)}"></div>
+              </a>
+              <a th:style="'visibility:' + ${postCursor.hasNext()?'block':'hidden'}" th:href="@{${postCursor.next.status.permalink}}" th:title="${postCursor.next.spec.title}" id="article-nav-newer" class="article-nav-link-wrap newer">
+                <strong class="article-nav-caption">下一篇</strong>
+                <div class="article-nav-title" th:text="${#strings.abbreviate(postCursor.next.spec.title,20)}"></div>
               </a>
           </nav>
           <div id="comment" th:if="${haloCommentEnabled}">
