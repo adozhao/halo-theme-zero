@@ -508,8 +508,8 @@ td, th, table caption, table td, table th {
 #sans-font, #dark-mode {
   float: right;
   width: 3em;
-  height: 2em;
-  line-height: 2em;
+  height: 2.3em;
+  line-height: 2.3em;
   text-align: center;
   cursor: pointer;
 }
